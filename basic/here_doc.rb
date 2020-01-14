@@ -22,3 +22,15 @@ print <<"foo", <<"bar"
 foo
     The second doc.
 bar
+
+puts "Save here doc to file!"
+text = <<`foo`
+    cat ~/.bash_profile
+foo
+puts text
+
+File.open("/tmp/abc", "w") do |io|
+    io.write(text)
+end
+puts "----------------------------"
+exec "ls -al /tmp/ && cat /tmp/abc"
