@@ -1,0 +1,10 @@
+#!/usr/bin/ruby
+a, b = ARGV[0].to_i, 0
+for i in (2..a-1)
+   b = i if a % i == 0
+end
+if b == 0
+   puts "is prime."
+else
+   puts "not prime. factor is #{b}"
+end
